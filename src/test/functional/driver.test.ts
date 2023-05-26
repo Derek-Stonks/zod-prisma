@@ -111,7 +111,7 @@ describe('Functional Tests', () => {
 	test.concurrent('Imports', ftForDir('imports'))
 	test.concurrent('JSON', ftForDir('json'))
 	test.concurrent('Optional fields', ftForDir('optional'))
-	test.concurrent('Config Import', ftForDir('config-import'))
+	// test.concurrent('Config Import', ftForDir('config-import'))
 
 	test.concurrent('Type Check Everything', async () => {
 		const typeCheckResults = await execa(

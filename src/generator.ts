@@ -15,7 +15,7 @@ export const writeImportsForModel = (
 	model: DMMF.Model,
 	sourceFile: SourceFile,
 	config: Config,
-	{ schemaPath, outputPath, clientPath }: PrismaOptions
+	{ outputPath, clientPath }: PrismaOptions
 ) => {
 	const { relatedModelName } = useModelNames(config)
 	const importList: ImportDeclarationStructure[] = [
@@ -26,15 +26,15 @@ export const writeImportsForModel = (
 		},
 	]
 
-	if (config.imports) {
-		importList.push({
-			kind: StructureKind.ImportDeclaration,
-			namespaceImport: 'imports',
-			moduleSpecifier: dotSlash(
-				path.relative(outputPath, path.resolve(path.dirname(schemaPath), config.imports))
-			),
-		})
-	}
+	// if (config.imports) {
+	// 	importList.push({
+	// 		kind: StructureKind.ImportDeclaration,
+	// 		namespaceImport: 'imports',
+	// 		moduleSpecifier: dotSlash(
+	// 			path.relative(outputPath, path.resolve(path.dirname(schemaPath), config.imports))
+	// 		),
+	// 	})
+	// }
 
 	if (config.useDecimalJs && model.fields.some((f) => f.type === 'Decimal')) {
 		importList.push({

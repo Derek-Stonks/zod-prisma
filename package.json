@@ -1,6 +1,6 @@
 {
-	"name": "@derek-stonks/zod-prisma",
-	"version": "0.6.1",
+	"name": "@stonked/zod-prisma",
+	"version": "0.6.2",
 	"description": "(DO NOT INSTALL. THIS FORK WILL BECOME PRIVATE SOON) - A Prisma generator that creates Zod schemas for all of your models.",
 	"license": "MIT",
 	"author": "Derek Johnson",
